@@ -7,17 +7,18 @@
     border-radius: 4px;
     font-size: 1.6rem;
     font-weight: 700;
-    cursor: pointer;
+    font-family: 'TikTokFont', sans-serif;
+    cursor: pointer; /* Thay đổi con trỏ thành hình bàn tay */
     background-color: var(--white);
     border: 1px solid transparent;
-    user-select: none;
+    user-select: none; /* Ngăn người dùng chọn văn bản */
 
     + .wrapper {
         margin-left: 8px;
     }
 
     &.disabled {
-        pointer-events: none;
+        pointer-events: none; /*là một thuộc tính CSS được sử dụng để vô hiệu hóa tất cả các sự kiện chuột trên phần tử mà thuộc tính này được áp*/
         opacity: 0.5;
     }
 }
@@ -25,6 +26,12 @@
 .icon + .title,
 .title + .icon {
     margin-left: 8px;
+}
+
+.icon {
+    display: inline-block;
+    width: 24px;
+    text-align: center;
 }
 
 // Button types
@@ -65,8 +72,6 @@
         text-decoration: underline;
     }
 }
-
-// Disabled
 
 // Button sizes
 .small {
