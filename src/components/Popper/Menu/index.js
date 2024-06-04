@@ -11,7 +11,7 @@ const cx = classNames.bind(styles);
 
 const defaultFn = () => {};
 
-function Menu({ children, items = [], onChange = defaultFn }) {
+function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn }) {
     const [history, setHistory] = useState([{ data: items }]); //Khởi tạo trạng thái history như một mảng chứa một đối tượng ban đầu với dữ liệu là các mục của menu (items). Mỗi lần người dùng di chuyển vào một menu con, một đối tượng mới sẽ được thêm vào mảng này.
     const current = history[history.length - 1];
 
@@ -42,6 +42,7 @@ function Menu({ children, items = [], onChange = defaultFn }) {
             interactive
             delay={[0, 700]} // 0 là show luôn còn 700 mm giây sẽ ẩn đi
             offset={[12, 8]}
+            hideOnClick={hideOnClick}
             placement="bottom-end"
             render={(attrs) => (
                 <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
