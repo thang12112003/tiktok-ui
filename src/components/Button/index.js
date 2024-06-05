@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import styles from './Button.module.scss';
@@ -36,7 +37,7 @@ function Button({
         });
     }
 
-     // Xác định component được sử dụng dựa trên prop `to` hoặc `href`
+    // Xác định component được sử dụng dựa trên prop `to` hoặc `href`
     if (to) {
         props.to = to;
         Comp = Link;
@@ -45,7 +46,7 @@ function Button({
         Comp = 'a';
     }
 
-     // Tạo className bằng cách kết hợp các class điều kiện
+    // Tạo className bằng cách kết hợp các class điều kiện
     const classes = cx('wrapper', {
         [className]: className,
         primary,
@@ -65,5 +66,22 @@ function Button({
         </Comp>
     );
 }
+
+Button.prototype = {
+    to: PropTypes.string,
+    href: PropTypes.string,
+    primary: PropTypes.bool,
+    outline: PropTypes.bool,
+    text: PropTypes.bool,
+    rounded: PropTypes.bool,
+    disabled: PropTypes.bool,
+    small: PropTypes.bool,
+    large: PropTypes.bool,
+    children: PropTypes.node.isRequired,
+    className: PropTypes.string,
+    leftIcon: PropTypes.node,
+    rightIcon: PropTypes.node,
+    onClick: PropTypes.func,
+};
 
 export default Button;

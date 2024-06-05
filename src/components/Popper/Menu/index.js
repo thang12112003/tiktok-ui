@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/headless';
 
@@ -66,5 +67,11 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
     );
     //{renderItems()} trong JSX sẽ gọi hàm renderItems và chèn kết quả (một mảng các phần tử MenuItem) vào trong PopperWrapper. Điều này giúp các phần tử MenuItem được render chính xác bên trong thành phần Tippy.
 }
+Menu.propTypes = {
+    children: PropTypes.node.isRequired,
+    items: PropTypes.array,
+    hideOnClick: PropTypes.bool,
+    onChange: PropTypes.func,
+};
 
 export default Menu;
