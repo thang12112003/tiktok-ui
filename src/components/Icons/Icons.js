@@ -178,10 +178,89 @@ export const LiveActiveIcon = ({ width = '3.2rem', height = '3.2rem', className 
     </svg>
 );
 
-export const UserFollowIcon = ({ width = '3.2rem', height = '3.2rem', className }) => null;
+export const UserFollowIcon = ({ width = '3.2rem', height = '3.2rem', className }) => (
+    <svg
+        className={className}
+        width={width}
+        height={height}
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path
+            d="M14 19.2857L15.8 21L20 17M4 21C4 17.134 7.13401 14 11 14C12.4872 14 13.8662 14.4638 15 15.2547M15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7Z"
+            stroke="#000000"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        />
+    </svg>
+);
 
-export const UserFollowActiveIcon = ({ width = '3.2rem', height = '3.2rem', className }) => null;
+export const UserFollowActiveIcon = ({ width = '3.2rem', height = '3.2rem', className }) => (
+    <svg
+        className={className}
+        width={width}
+        height={height}
+        viewBox="0 0 24 24"
+        fill="#fe2c55"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path
+            d="M14 19.2857L15.8 21L20 17M4 21C4 17.134 7.13401 14 11 14C12.4872 14 13.8662 14.4638 15 15.2547M15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7Z"
+            fill="#fe2c55"
+            stroke="#fe2c55"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        />
+    </svg>
+);
 
-export const DiscoverIcon = ({ width = '3.2rem', height = '3.2rem', className }) => null;
+export const DiscoverIcon = ({ width = '3.2rem', height = '3.2rem', className }) => (
+    <svg
+        className={className}
+        width={width}
+        height={height}
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M16.982 8.99791C17.5399 7.7427 16.2573 6.46011 15.0021 7.01799L10.0018 9.24033C9.66249 9.39115 9.39115 9.66249 9.24033 10.0018L7.01798 15.0021C6.46011 16.2573 7.74269 17.5399 8.99791 16.982L13.9982 14.7597C14.3375 14.6089 14.6089 14.3375 14.7597 13.9982L16.982 8.99791ZM10.9898 10.9898L14.6264 9.37359L13.0102 13.0102L9.37359 14.6264L10.9898 10.9898Z"
+            fill="#0F0F0F"
+        />
+        <path
+            fillRule="currentColor"
+            clipRule="currentColor"
+            d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM12 20.9869C7.03665 20.9869 3.01306 16.9633 3.01306 12C3.01306 7.03665 7.03665 3.01306 12 3.01306C16.9633 3.01306 20.9869 7.03665 20.9869 12C20.9869 16.9633 16.9633 20.9869 12 20.9869Z"
+            fill="#0F0F0F"
+        />
+    </svg>
+);
 
-export const DiscoverActiveIcon = ({ width = '3.2rem', height = '3.2rem', className }) => null;
+export const DiscoverActiveIcon = ({ width = '3.2rem', height = '3.2rem', className }) => (
+    <svg
+        className={className}
+        width={width}
+        height={height}
+        viewBox="0 0 24 24"
+        fill="#fe2c55"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M16.982 8.99791C17.5399 7.7427 16.2573 6.46011 15.0021 7.01799L10.0018 9.24033C9.66249 9.39115 9.39115 9.66249 9.24033 10.0018L7.01798 15.0021C6.46011 16.2573 7.74269 17.5399 8.99791 16.982L13.9982 14.7597C14.3375 14.6089 14.6089 14.3375 14.7597 13.9982L16.982 8.99791ZM10.9898 10.9898L14.6264 9.37359L13.0102 13.0102L9.37359 14.6264L10.9898 10.9898Z"
+            fill="#fe2c55"
+        />
+        <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23ZM12 20.9869C7.03665 20.9869 3.01306 16.9633 3.01306 12C3.01306 7.03665 7.03665 3.01306 12 3.01306C16.9633 3.01306 20.9869 7.03665 20.9869 12C20.9869 16.9633 16.9633 20.9869 12 20.9869Z"
+            fill="#fe2c55"
+        />
+    </svg>
+);
