@@ -1,13 +1,12 @@
-import { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 
+import { UserAuth } from '~/components/Store/AuthContext';
 import styles from './Sidebar.module.scss';
 import Menu, { MenuItem } from './Menu';
+import Image from '~/components/Image';
 import {
     HomeIcon,
     HomeActiveIcon,
-    UserFollowIcon,
-    UserFollowActiveIcon,
     UserGroupIcon,
     UserGroupActiveIcon,
     DiscoverIcon,
@@ -16,41 +15,16 @@ import {
     LiveActiveIcon,
 } from '~/components/Icons';
 import SuggestedAccounts from '~/components/SuggestedAccounts';
-import * as userService from '~/services/userService';
 import config from '~/config';
+import FooterSide from './FooterSide';
 
 const cx = classNames.bind(styles);
 
-const INIT_PAGE = 1;
-const PER_PAGE = 5;
-
 function Sidebar() {
-    const [page, setPage] = useState(INIT_PAGE);
-    const [perPage, setPerPage] = useState(PER_PAGE);
-    const [suggestedUsers, setSuggestedUsers] = useState([]);
+    const { userAuth, tokenStr } = UserAuth();
 
     //gọi api
     // Gọi API khi page thay đổi
-    useEffect(() => {
-        const fetchSuggestedUsers = async () => {
-            try {
-                const data = await userService.getsuggested(page, perPage);
-                if (data) {
-                    setSuggestedUsers((prevUsers) => [...prevUsers, ...data]);
-                }
-            } catch (error) {
-                console.error(error);
-            }
-        };
-
-        fetchSuggestedUsers();
-    }, [page, perPage]);
-
-    const handleSeeAll = () => {
-        setPage(page + 1);
-        setPerPage(10);
-    };
-
     return (
         <aside className={cx('wrapper')}>
             <Menu>
@@ -62,12 +36,6 @@ function Sidebar() {
                 />
                 <MenuItem
                     title="Đang Follow"
-                    to={config.routes.following}
-                    icon={<UserFollowIcon />}
-                    activeIcon={<UserFollowActiveIcon />}
-                />
-                <MenuItem
-                    title="Bạn bè"
                     to={config.routes.friend}
                     icon={<UserGroupIcon />}
                     activeIcon={<UserGroupActiveIcon />}
@@ -78,11 +46,18 @@ function Sidebar() {
                     icon={<DiscoverIcon />}
                     activeIcon={<DiscoverActiveIcon />}
                 />
+
                 <MenuItem title="LIVE" to={config.routes.live} icon={<LiveIcon />} activeIcon={<LiveActiveIcon />} />
+                <MenuItem
+                    title="Hồ sơ"
+                    to={config.routes.live}
+                    icon={<Image className={cx('avatar-profile')} src={userAuth.avatar} />}
+                    activeIcon={<LiveActiveIcon />}
+                />
             </Menu>
 
-            <SuggestedAccounts label="Suggested accounts" data={suggestedUsers} onSeeAll={handleSeeAll} />
-            <SuggestedAccounts label="Following accounts" />
+            {userAuth && tokenStr ? <SuggestedAccounts label="Các tài khoản đang follow" /> : <h1>đăng nhập</h1>}
+            <FooterSide />
         </aside>
     );
 }

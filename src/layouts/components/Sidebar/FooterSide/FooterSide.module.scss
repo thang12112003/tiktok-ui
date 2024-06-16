@@ -1,0 +1,37 @@
+.footer-page {
+    padding-top: 16px;
+    margin: 0 8px 60px;
+    border-top: 1px solid #1618231f;
+    width: 216px;
+}
+
+.details-page + .details-page{
+
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.details-page {
+
+    margin-right: 35px;
+
+    span {
+        margin: 5px 6px 0 0;
+        font-weight: 600;
+        font-size: 1.2rem;
+        color: #16182380;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    h4{
+        font-size: 15px;
+        line-height: 22px;
+        margin-top: 15px;
+        color: rgba(22, 24, 35, 0.5);
+        font-family: TikTokDisplayFont;
+        font-weight: 700;
+    }
+}

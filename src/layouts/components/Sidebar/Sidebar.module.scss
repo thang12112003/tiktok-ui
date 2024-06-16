@@ -1,5 +1,12 @@
 .wrapper {
-    width: 356px;
+    width: 240px;
     padding: 20px 0 26px 8px;
     margin-left: -18px;
+}
+.avatar-profile {
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+    border-radius: 50%;
+    object-fit: cover;
 }

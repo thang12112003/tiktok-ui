@@ -3,7 +3,7 @@ import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import HeadlessTippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
-import * as searchServices from '~/services/searchService';
+import search from '~/services/searchService';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '~/components/AccountItem';
 import { SearchIcon } from '~/components/Icons';
@@ -32,7 +32,7 @@ function Search() {
         const fetchApi = async () => {
             setLoading(true);
 
-            const result = await searchServices.search(debouncedValue);
+            const result = await search.search(debouncedValue);
 
             setSearchResult(result);
             setLoading(false);
@@ -62,7 +62,7 @@ function Search() {
     return (
         // Using a wrapper <div> tag around the reference element solves
         // this by creating a new parentNode context.
-        <div>
+        <div className={cx('search-block')}>
             <HeadlessTippy
                 interactive
                 visible={showResult && searchResult.length > 0} //đúng 2 điều kiện mới hiện tìm kiếm
@@ -82,7 +82,7 @@ function Search() {
                     <input
                         ref={inputRef}
                         value={searchValue}
-                        placeholder="Search accounts and videos"
+                        placeholder="Tìm kiếm"
                         spellCheck={false}
                         onChange={handleChange}
                         onFocus={() => setShowResult(true)} // hiện tìm kiếm ra

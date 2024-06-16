@@ -11,14 +11,13 @@ import Upload from '~/pages/Upload';
 import Search from '~/pages/Search';
 import Live from '~/pages/Live';
 import Discover from '~/pages/Discover';
-import Friend from '~/pages/Friend';
+
 
 // Public Routes
 export const publicRoutes = [
     { path: config.routes.home, component: Home },
     { path: config.routes.following, component: Following },
     { path: config.routes.live, component: Live },
-    { path: config.routes.friend, component: Friend },
     { path: config.routes.discover, component: Discover },
     { path: config.routes.profile, component: Profile },
     { path: config.routes.upload, component: Upload, layout: HeaderOnly },

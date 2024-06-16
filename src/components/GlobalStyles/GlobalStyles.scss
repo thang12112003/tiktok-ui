@@ -11,8 +11,8 @@
 
     //Default layout
     --default-layout-header-height: 60px;
-    --default-layout-width: 1150px;
-    --default-layout-horizontal-spacer: 24px;
+    --default-layout-width: 100%;
+    --default-layout-horizontal-spacer: 16px;
 }
 
 * {
@@ -66,31 +66,25 @@ a {
 @font-face {
     font-family: TikTokFont;
     src: url('/assets/fonts/TikTokFont-Regular.woff2');
-    font-size: 400;
+    font-weight: 400;
 }
 
 @font-face {
     font-family: TikTokFont;
     src: url('/assets/fonts/TikTokFont-Semibold.woff2');
-    font-size: 600;
+    font-weight: 600;
 }
 
 @font-face {
     font-family: TikTokFont;
     src: url('/assets/fonts/TikTokFont-Bold.woff2');
-    font-size: 700;
-}
-
-@font-face {
-    font-family: TikTokDisplayFont;
-    src: url('/assets/fonts/TikTokDisplayFont-Semibold.woff2');
-    font-size: 600;
+    font-weight: 700;
 }
 
 @font-face {
     font-family: TikTokDisplayFont;
     src: url('/assets/fonts/TikTokDisplayFont-Bold.woff2');
-    font-size: 700;
+    font-weight: 700;
 }
 
 // Custom tippy tooltip
